@@ -15,8 +15,15 @@ get '/sam' do
   "Samuel"
 end
 
-get '/cat' do
+get '/random-cat' do
   @name = %w(Amigo Oscar Viking).sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @name = params[:name]
+  @colour = params[:colour]
   erb(:index)
 end
 
